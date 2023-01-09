@@ -15,7 +15,7 @@ export default function Book({ item }) {
   return (
     <div style={bookContainerStyle}>
       <Link to={`/view/${item.id}`} style={bookInfoStyle}>
-        <img src={item.cover} width="200" />
+        <img alt="book" src={item.cover} width="200" />
         <div>{item.title}</div>
       </Link>
     </div>
