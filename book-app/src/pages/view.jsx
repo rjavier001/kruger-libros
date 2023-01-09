@@ -11,7 +11,7 @@ export default function View() {
   useEffect(() => {
     const book = store.getItem(params.bookId);
     setItem(book);
-  }, []);
+  }, [params,store]);
 
   return (
     <Layout>
