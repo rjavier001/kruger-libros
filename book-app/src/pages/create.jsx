@@ -51,6 +51,7 @@ export default function Create() {
       case "review":
         setReview(e.target.value);
         break;
+      default:
     }
   }
 
@@ -83,7 +84,10 @@ export default function Create() {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit} style={inputStyles.formContainer}>
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-xl m-auto py-5 mt-5 px-5 border"
+      >
         <div style={inputStyles.container}>
           <div style={inputStyles.title}>Title</div>
           <input
@@ -109,7 +113,7 @@ export default function Create() {
         <div style={inputStyles.container}>
           <div style={inputStyles.title}>Cover</div>
           <input type="file" name="cover" onChange={handleOnChangeFile} />
-          <div>{!!cover ? <img src={cover} width="200" /> : ""}</div>
+          <div>{!!cover ? <img alt="img" src={cover} width="200" /> : ""}</div>
         </div>
 
         <div style={inputStyles.container}>
