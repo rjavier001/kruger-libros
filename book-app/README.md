@@ -37,7 +37,7 @@ Use the following steps to run this Portfolio locally:
 
 For a live demo please click on the following link:
 
-https://kruger-emoji-site.netlify.app/
+https://kruger-book-catalog-site.netlify.app/
 
 ## Authors
 

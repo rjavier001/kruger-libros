@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Layout from "../components/layout";
 import { useAppContext } from "../store/store";
+import { useNavigate } from "react-router-dom";
 
 export default function Create() {
   const [title, setTitle] = useState("");
@@ -28,6 +29,7 @@ export default function Create() {
       textAlign: "left",
     },
     input: {
+      color: "#000",
       padding: "10px",
       borderRadius: "5px",
       fontSize: "16px",
@@ -69,6 +71,7 @@ export default function Create() {
     };
 
     store.createItem(newBook);
+    handleOnClick();
   }
 
   function handleOnChangeFile(e) {
@@ -81,6 +84,11 @@ export default function Create() {
     };
     reader.readAsDataURL(file);
   }
+  const navigate = useNavigate();
+  const handleOnClick = useCallback(
+    () => navigate("/index", { replace: true }),
+    [navigate]
+  );
 
   return (
     <Layout>
